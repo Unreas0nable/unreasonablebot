@@ -21,6 +21,8 @@ client.on('ready', () => {
     console.log('The bot is online!');
 });
 
+client.login(process.env.BOT_TOKEN)
+
 client.on('message', message => {
     var args = message.content.split(/[ ]+/);
     if(commandIs("hello", message)){

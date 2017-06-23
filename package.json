@@ -1,0 +1,12 @@
+{
+  "name": "Unreas0nableBot2",
+  "description": "Unreas0nableBot2",
+  "version": "5.7.1",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "11.1.0"
+  }
+}
