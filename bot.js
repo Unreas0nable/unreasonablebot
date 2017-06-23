@@ -29,7 +29,7 @@ client.on('message', message => {
         message.channel.sendMessage('Hello there, ' + message.author.username);
     }
     if(commandIs("introduction", message)){
-        message.channel.sendMessage('UnreasonableBot is a simple bot created by Unreasonable v.1');
+        message.channel.sendMessage('UnreasonableBot is a simple bot created by Unreasonable v.3');
     }
     if(commandIs("say", message)){
         if(hasRole(message.member, "Moderator") || hasRole(message.member, "Owner") || hasRole(message.member, "Tester")){
@@ -60,21 +60,26 @@ client.on('message', message => {
         }
     }
     if(commandIs("kick", message)){
-        if(hasRole(message.member, "Moderator") || hasRole(message.member, "Owner") || hasRole(message.member, "Tester")){
+        if(hasRole(message.member, "Moderator") || hasRole(message.member, "Owner")){
         if(args.length === 1){
                 message.channel.sendMessage('You did not define a argument. Usage: `u!kick [user to kick]`');
             } else {
                 message.guild.member(message.mentions.users.first()).kick();
             }
+        } else {
+            message.channel.sendMessage('You are not an `Admin`.');
         }
     }
     if(commandIs("ban", message)){
-        if(hasRole(message.member, "Moderator") || hasRole(message.member, "Owner") || hasRole(message.member, "Tester")){
+        if(hasRole(message.member, "Moderator") || hasRole(message.member, "Owner")){
         if(args.length === 1){
             message.channel.sendMessage('You did not define a argument. Usage: `u!ban [user to kick]`');
             } else {
                 message.guild.member(message.mentions.users.first()).ban();
             }
+        } else {
+            message.channel.sendMessage('You are not an `Admin`.');
+        }
     }
 });
 
