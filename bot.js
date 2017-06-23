@@ -68,6 +68,14 @@ client.on('message', message => {
             }
         }
     }
+    if(commandIs("ban", message)){
+        if(hasRole(message.member, "Moderator") || hasRole(message.member, "Owner") || hasRole(message.member, "Tester")){
+        if(args.length === 1){
+            message.channel.sendMessage('You did not define a argument. Usage: `u!ban [user to kick]`');
+            } else {
+                message.guild.member(message.mentions.users.first()).ban();
+            }
+    }
 });
 
 client.login('MzI3NjEwMDEyMzgzODM4MjIw.DC38Zg.TFvHj4ER_Jhtt2sHozamarO4mdY');
